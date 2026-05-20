@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayeem Hasan | Full-Stack Web Engineer & WooCommerce Specialist</title>
+    <meta name="description" content="Expert WordPress & WooCommerce developer specializing in enterprise performance tuning, payment recovery engines, and robust Laravel integrations.">
+    <meta name="keywords" content="WordPress Developer, WooCommerce Specialist, Laravel Engineer, OpenLiteSpeed Performance, Payment Gateway Automation, Comilla Developer">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nayeem Hasan | Full-Stack Web Engineer">
+    <meta property="og:description" content="High-performance custom web automation components, system recovery, and highly secure e-commerce systems engineering.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: '#0A0A0C',
+                        darkCard: '#121216',
+                        borderGray: '#1F1F26',
+                        neonOrange: '#FF5100',
+                        neonCyan: '#00F0FF'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-matte text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-neonCyan selection:text-black">
+
+    <!-- Fixed Preloader Layer -->
+    <div id="page-loader" class="fixed inset-0 z-50 bg-matte flex flex-col items-center justify-center transition-all duration-500">
+        <div class="relative w-24 h-24 flex items-center justify-center">
+            <div class="absolute inset-0 border-4 border-white/5 rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-t-neonOrange border-r-neonCyan rounded-full animate-spin"></div>
+            <span class="text-white font-heading font-bold text-xs tracking-wider">NH.IO</span>
+        </div>
+        <p class="text-gray-500 font-mono text-[11px] mt-4 tracking-widest uppercase animate-pulse">Initializing Interface Core...</p>
+    </div>
+
+    <!-- Parallax Ambient Light Background Matrix -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="streak-orange absolute top-[-10%] left-[-20%] w-[60vw] h-[50vh] rounded-full filter blur-[150px] opacity-10 bg-gradient-to-br from-neonOrange to-red-600"></div>
+        <div class="streak-cyan absolute bottom-[10%] right-[-20%] w-[60vw] h-[50vh] rounded-full filter blur-[150px] opacity-10 bg-gradient-to-br from-neonCyan to-blue-600"></div>
+    </div>
+
+    <!-- Accessibility Motion Controller Override -->
+    <div class="sr-only-focusable fixed bottom-6 left-6 z-50">
+        <button id="motion-toggle" class="bg-darkCard/80 backdrop-blur-md border border-borderGray text-xs font-mono px-3 py-2 rounded-xl text-gray-400 hover:text-white transition-colors">
+            SYS.MOTION: ENABLED
+        </button>
+    </div>
+
+    <!-- Sticky Navigation Bar Header -->
+    <header id="sticky-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="text-lg font-heading font-bold tracking-tight text-white flex items-center gap-1.5 group">
+                <span class="bg-gradient-to-r from-neonOrange to-neonCyan w-3 h-3 rounded-sm group-hover:rotate-45 transition-transform duration-300"></span>
+                NAYEEM<span class="text-neonCyan">HASAN</span>
+            </a>
+            
+            <nav id="desktop-nav" class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link text-xs font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-200">About</a>
+                <a href="#services" class="nav-link text-xs font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-200">Services</a>
+                <a href="#live-ecosystem" class="nav-link text-xs font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-200">Live Client Systems</a>
+                <a href="#projects" class="nav-link text-xs font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-200">Bespoke Builds</a>
+                <a href="#testimonials" class="nav-link text-xs font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-200">Testimonials</a>
+                <a href="#contact" class="nav-link text-xs font-medium uppercase tracking-wider text-gray-400 hover:text-white transition-colors duration-200">Contact</a>
+                <a href="#contact" class="relative group p-[1px] rounded-full overflow-hidden transition-all duration-300">
+                    <span class="absolute inset-0 bg-gradient-to-r from-neonOrange to-neonCyan group-hover:opacity-100 transition-opacity"></span>
+                    <div class="relative bg-matte px-5 py-2 rounded-full text-white font-heading font-bold text-xs tracking-wider transition-colors group-hover:bg-transparent group-hover:text-black">
+                        CONNECT NOW
+                    </div>
+                </a>
+            </nav>
+
+            <button id="menu-btn" class="block md:hidden text-gray-300 hover:text-white transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Layout">
+                <svg class="w-6 h-6 stroke-current fill-none" viewBox="0 0 24 24">
+                    <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Dropdown Mobile Overlay Drawer -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-matte/95 backdrop-blur-xl border-b border-borderGray flex flex-col px-8 py-8 space-y-4" aria-hidden="true">
+            <a href="#about" class="mobile-nav-link text-base font-heading font-bold text-gray-300 hover:text-neonCyan">About</a>
+            <a href="#services" class="mobile-nav-link text-base font-heading font-bold text-gray-300 hover:text-neonCyan">Services</a>
+            <a href="#live-ecosystem" class="mobile-nav-link text-base font-heading font-bold text-gray-300 hover:text-neonCyan">Live Clients</a>
+            <a href="#projects" class="mobile-nav-link text-base font-heading font-bold text-gray-300 hover:text-neonCyan">Bespoke Builds</a>
+            <a href="#testimonials" class="mobile-nav-link text-base font-heading font-bold text-gray-300 hover:text-neonCyan">Testimonials</a>
+            <a href="#contact" class="mobile-nav-link text-base font-heading font-bold text-gray-300 hover:text-neonCyan">Contact</a>
+            <a href="#contact" class="gradient-btn text-center text-xs font-heading font-bold py-3.5 rounded-xl text-white block">CONNECT NOW</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col md:flex-row items-center justify-between pt-32 pb-16 gap-12 scroll-mt-20">
+            <div class="flex-1 space-y-6 text-left hero-text-container">
+                <div class="inline-flex items-center space-x-2 bg-darkCard border border-borderGray px-4 py-2 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-[10px] font-mono tracking-widest text-gray-400 uppercase">PRO SYSTEM INFRASTRUCTURE STATUS: ACTIVE</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-heading font-bold tracking-tight text-white leading-[1.05] section-heading">
+                    Nayeem Hasan
+                </h1>
+                <h2 class="text-xl sm:text-2xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-neonCyan via-blue-400 to-neonOrange">
+                    Full-Stack Web Engineer & WooCommerce Specialist
+                </h2>
+                <p class="text-sm sm:text-base text-gray-400 max-w-xl leading-relaxed font-light">
+                    I resolve backend architectural issues for modern commerce entities. I design optimized codebases using Laravel, scale digital platforms through custom plugin compilation, and optimize web servers to decrease loading latency.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#live-ecosystem" class="gradient-btn text-white text-xs font-heading font-bold tracking-wider px-8 py-4 rounded-xl shadow-[0_4px_20px_rgba(255,81,0,0.15)] transition-all duration-300 hover:scale-[1.02]">
+                        EXPLORE LIVE SYSTEMS
+                    </a>
+                    <a href="#contact" class="bg-transparent hover:bg-white/5 border border-borderGray hover:border-neonCyan text-white text-xs font-heading font-bold tracking-wider px-8 py-4 rounded-xl transition-all duration-300">
+                        DIRECT ROUTE CONTACT
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Code Component Visual Mockup -->
+            <div class="flex-1 relative w-full max-w-md md:max-w-none flex justify-center hero-visual-container">
+                <div id="floating-mockup" class="w-full aspect-[4/3] glass-panel rounded-2xl relative p-5 border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col">
+                    <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/40"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/40"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/40"></span>
+                            <span class="text-[10px] text-gray-500 font-mono pl-2">ServerSyncEngine.php</span>
+                        </div>
+                        <span class="text-[9px] font-mono bg-neonCyan/10 text-neonCyan px-2 py-0.5 rounded">v2.4.0</span>
+                    </div>
+                    <div class="font-mono text-xs text-neonCyan/90 space-y-2 overflow-hidden flex-1 select-none leading-relaxed">
+                        <p><span class="text-neonOrange">namespace</span> App\Core\Optimization;</p>
+                        <p><span class="text-neonOrange">class</span> <span class="text-white">LSCacheRuntime</span> {</p>
+                        <p class="text-gray-500 pl-4">// Map dynamic page buffers directly onto low-latency RAM disks</p>
+                        <p class="pl-4"><span class="text-neonOrange">public function</span> <span class="text-blue-400">purgeStaleObjects</span>(array $ids) {</p>
+                        <p class="pl-8">$this->disk->mountTransientLayer();</p>
+                        <p class="pl-8">foreach ($ids as $id) {</p>
+                        <p class="pl-12">Log::info("Purging object context buffer frame: {$id}");</p>
+                        <p class="pl-12">$this->redis->del("prod_feed_group_{$id}");</p>
+                        <p class="pl-8">}</p>
+                        <p class="pl-4">}</p>
+                        <p>}</p>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 glass-panel p-4 rounded-xl border border-white/5 shadow-xl flex items-center space-x-3 bg-matte/90">
+                        <div class="w-10 h-10 rounded-lg bg-neonCyan/10 flex items-center justify-center text-neonCyan">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-[9px] text-gray-500 font-bold uppercase tracking-wider">Security Architecture</p>
+                            <p class="text-sm font-heading font-bold text-white">Fail-Safe Active</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-28 border-t border-borderGray scroll-mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5 image-reveal-container">
+                    <div class="relative group rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] bg-darkCard border border-white/5">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-neonOrange/20 to-transparent mix-blend-overlay z-10"></div>
+                        <img src="nayeem_hasan.png" 
+                             alt="Nayeem Hasan Portrait Workspace" 
+                             class="w-full h-full object-cover grayscale contrast-125 transition-transform duration-750 group-hover:scale-105"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-90 z-20"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 glass-panel border border-white/5 rounded-xl z-30">
+                            <p class="text-[10px] font-mono uppercase tracking-widest text-neonCyan">Operational HQ</p>
+                            <p class="text-xs font-heading font-bold text-white">Comilla, Bangladesh (Remote Hub Connected Globally)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 space-y-6">
+                    <h2 class="text-3xl font-heading font-bold tracking-tight text-white section-heading leading-tight">
+                        Engineering High-Performance Backend Architectures for E-commerce
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed font-light text-sm sm:text-base">
+                        I am a results-driven WordPress and WooCommerce developer with deep domain expertise in custom plugin engineering, backend automation logic, and custom database management using PHP and MySQL. I specialize in addressing business-critical system failures, such as repairing multi-step checkout sequences and architecting fail-safe payment recovery frameworks.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed font-light text-sm">
+                        Whether tracking down pixel attribution data failures or integrating complex third-party REST APIs with token-based authentications, I build maintainable, modular codebases designed to handle load, optimize load speeds, and scale smoothly.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 stats-grid">
+                        <div class="glass-panel p-5 rounded-xl border border-white/5 relative overflow-hidden group">
+                            <span class="absolute top-0 left-0 w-1 h-full bg-neonOrange"></span>
+                            <p class="text-2xl font-heading font-bold text-white">100%</p>
+                            <p class="text-[11px] text-gray-500 font-medium tracking-wide uppercase mt-1">Success Rating</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl border border-white/5 relative overflow-hidden group">
+                            <span class="absolute top-0 left-0 w-1 h-full bg-neonCyan"></span>
+                            <p class="text-2xl font-heading font-bold text-white">30+</p>
+                            <p class="text-[11px] text-gray-500 font-medium tracking-wide uppercase mt-1">Custom Plugins Deployed</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl border border-white/5 relative overflow-hidden group col-span-2 sm:col-span-1">
+                            <span class="absolute top-0 left-0 w-1 h-full bg-white"></span>
+                            <p class="text-2xl font-heading font-bold text-white">24hr</p>
+                            <p class="text-[11px] text-gray-500 font-medium tracking-wide uppercase mt-1">Response Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESTORED: Services Section Layout -->
+        <section id="services" class="py-28 border-t border-borderGray scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-heading font-bold tracking-tight text-white section-heading">
+                    Core Engineering Services
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Clean, testable software solutions designed to optimize your e-commerce conversion pathways and structural security profiles.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 services-grid">
+                <!-- Service 1: WordPress & WooCommerce Development -->
+                <div class="glass-panel p-6 rounded-xl border border-white/5 hover:border-neonOrange/30 transition-all duration-300 bg-darkCard/40 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-neonOrange/10 flex items-center justify-center text-neonOrange group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        </div>
+                        <h3 class="text-base font-heading font-bold text-white">WordPress & WooCommerce</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">
+                            Building secure, scalable online stores and bespoke themes. Expert customization of checkout flows, payment processing, and core hooks.
+                        </p>
+                    </div>
+                    <ul class="text-[10px] font-mono text-gray-500 space-y-1 pt-4 border-t border-white/5 mt-6 list-none">
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonOrange"></span>Custom Checkout Layouts</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonOrange"></span>Payment Gateways</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonOrange"></span>Sub-hooks Configuration</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Laravel Framework Web Apps -->
+                <div class="glass-panel p-6 rounded-xl border border-white/5 hover:border-neonCyan/30 transition-all duration-300 bg-darkCard/40 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 flex items-center justify-center text-neonCyan group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3 class="text-base font-heading font-bold text-white">Laravel Web Apps</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">
+                            Architecting robust enterprise web applications using the Laravel Core Framework. Built with clean separation of models, migrations, and REST endpoints.
+                        </p>
+                    </div>
+                    <ul class="text-[10px] font-mono text-gray-500 space-y-1 pt-4 border-t border-white/5 mt-6 list-none">
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonCyan"></span>MVC Architecture Rules</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonCyan"></span>Relational Database Maps</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonCyan"></span>Third-Party Integrations</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Bug Fixing & System Debugging -->
+                <div class="glass-panel p-6 rounded-xl border border-white/5 hover:border-neonOrange/30 transition-all duration-300 bg-darkCard/40 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-neonOrange/10 flex items-center justify-center text-neonOrange group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        </div>
+                        <h3 class="text-base font-heading font-bold text-white">System Bug Fixing</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">
+                            Isolating php fatal crashes, conflict loops, and broken data synchronization routes. Deep system analysis via log file tracking.
+                        </p>
+                    </div>
+                    <ul class="text-[10px] font-mono text-gray-500 space-y-1 pt-4 border-t border-white/5 mt-6 list-none">
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonOrange"></span>Plugin & Theme Errors</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonOrange"></span>API Handshake Isolation</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonOrange"></span>Database Query Cleansing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Speed Optimization & Maintenance -->
+                <div class="glass-panel p-6 rounded-xl border border-white/5 hover:border-neonCyan/30 transition-all duration-300 bg-darkCard/40 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-neonCyan/10 flex items-center justify-center text-neonCyan group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-base font-heading font-bold text-white">Speed & Maintenance</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">
+                            Maximizing web server parameters (OpenLiteSpeed/LSCache) to lower load speeds. Providing ongoing site code stability backups.
+                        </p>
+                    </div>
+                    <ul class="text-[10px] font-mono text-gray-500 space-y-1 pt-4 border-t border-white/5 mt-6 list-none">
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonCyan"></span>Server RAM-Disk Tuning</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonCyan"></span>Database Optimization</li>
+                        <li class="flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-neonCyan"></span>Core Security Audits</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Client System Monitoring Matrix -->
+        <section id="live-ecosystem" class="py-28 border-t border-borderGray scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div class="inline-block text-[10px] font-mono bg-neonCyan/10 text-neonCyan px-3 py-1 rounded-full uppercase tracking-widest">Ongoing Service Deployments</div>
+                <h2 class="text-3xl font-heading font-bold tracking-tight text-white section-heading">
+                    Active Client Environments Managed
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Production systems currently undergoing continuous architectural code optimization, performance tracking, and backend maintenance audits.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 clients-grid">
+                <!-- Client 1 -->
+                <div class="bg-darkCard border border-borderGray rounded-xl p-6 relative overflow-hidden group hover:border-white/10 transition-colors">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-neonOrange/5 rounded-bl-full pointer-events-none"></div>
+                    <span class="text-[10px] font-mono text-gray-500 block uppercase mb-1">E-Commerce Syndication</span>
+                    <h3 class="text-base font-heading font-bold text-white mb-2">executiveample.com</h3>
+                    <p class="text-xs text-gray-400 font-light mb-4">Handling product feed generation protocols, tracking scripts integration, and data architecture stabilization.</p>
+                    <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                        <span class="text-[9px] font-mono bg-green-500/10 text-green-400 px-2 py-0.5 rounded uppercase">Optimized</span>
+                        <a href="https://executiveample.com" target="_blank" rel="noopener" class="text-[10px] text-neonCyan hover:underline inline-flex items-center gap-1">Verify Node <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Client 2 -->
+                <div class="bg-darkCard border border-borderGray rounded-xl p-6 relative overflow-hidden group hover:border-white/10 transition-colors">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-neonCyan/5 rounded-bl-full pointer-events-none"></div>
+                    <span class="text-[10px] font-mono text-gray-500 block uppercase mb-1">High-Volume Retail Hub</span>
+                    <h3 class="text-base font-heading font-bold text-white mb-2">gadgetz.com.bd</h3>
+                    <p class="text-xs text-gray-400 font-light mb-4">Managing heavy transaction loops, inventory sync workflows, and theme asset acceleration mapping.</p>
+                    <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                        <span class="text-[9px] font-mono bg-green-500/10 text-green-400 px-2 py-0.5 rounded uppercase">Maintained</span>
+                        <a href="https://gadgetz.com.bd" target="_blank" rel="noopener" class="text-[10px] text-neonCyan hover:underline inline-flex items-center gap-1">Verify Node <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Client 3 -->
+                <div class="bg-darkCard border border-borderGray rounded-xl p-6 relative overflow-hidden group hover:border-white/10 transition-colors">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-neonOrange/5 rounded-bl-full pointer-events-none"></div>
+                    <span class="text-[10px] font-mono text-gray-500 block uppercase mb-1">Brand Portal Node</span>
+                    <h3 class="text-base font-heading font-bold text-white mb-2">baseus.com.bd</h3>
+                    <p class="text-xs text-gray-400 font-light mb-4">Refactoring caching matrices, query loops isolation, and multi-currency gateway integration modules.</p>
+                    <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                        <span class="text-[9px] font-mono bg-green-500/10 text-green-400 px-2 py-0.5 rounded uppercase">Active Ops</span>
+                        <a href="https://baseus.com.bd" target="_blank" rel="noopener" class="text-[10px] text-neonCyan hover:underline inline-flex items-center gap-1">Verify Node <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Client 4 -->
+                <div class="bg-darkCard border border-borderGray rounded-xl p-6 relative overflow-hidden group hover:border-white/10 transition-colors">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-neonCyan/5 rounded-bl-full pointer-events-none"></div>
+                    <span class="text-[10px] font-mono text-gray-500 block uppercase mb-1">Automotive Tech Vault</span>
+                    <h3 class="text-base font-heading font-bold text-white mb-2">70mai.com.bd</h3>
+                    <p class="text-xs text-gray-400 font-light mb-4">Handling structural plugin optimization, core infrastructure maintenance, and speed optimization auditing.</p>
+                    <div class="flex items-center justify-between pt-3 border-t border-white/5">
+                        <span class="text-[9px] font-mono bg-green-500/10 text-green-400 px-2 py-0.5 rounded uppercase">Secure Core</span>
+                        <a href="https://70mai.com.bd" target="_blank" rel="noopener" class="text-[10px] text-neonCyan hover:underline inline-flex items-center gap-1">Verify Node <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production Solutions Case Studies Section -->
+        <section id="projects" class="py-28 border-t border-borderGray scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-heading font-bold tracking-tight text-white section-heading">
+                    Bespoke Engineered Component Deployments
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Explore real-world software components deployed across live digital store infrastructures.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card h-[420px] rounded-xl overflow-hidden relative group cursor-pointer border border-borderGray bg-darkCard"
+                     data-project="visa-processing"
+                     data-title="Visa Processing Manager"
+                     data-desc="An advanced multi-step global visa registration system designed natively for custom WordPress portals. Handles sensitive, volatile biographical client entries safely before finalized submission layers using persistent, highly secure temporary browser cache states."
+                     data-features="Multi-step validation flow framework, Temporary client-side recovery states, Dynamic repeatable asset validation lists, Cross-border logical validation blocks"
+                     data-stack="PHP OOP, JavaScript ES6, MySQL, Cookie Storage API">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Visa Processing Manager interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.4] grayscale" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/40 to-transparent flex flex-col justify-end p-6">
+                        <p class="text-[10px] font-mono text-neonOrange tracking-widest uppercase mb-1">Custom Component</p>
+                        <h3 class="text-lg font-heading font-bold text-white mb-2">Visa Processing Manager</h3>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white/5 border border-white/10 text-gray-300 text-[10px] px-2 py-0.5 rounded font-mono">PHP OOP</span>
+                            <span class="bg-white/5 border border-white/10 text-gray-300 text-[10px] px-2 py-0.5 rounded font-mono">JS ES6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card h-[420px] rounded-xl overflow-hidden relative group cursor-pointer border border-borderGray bg-darkCard"
+                     data-project="payment-retry"
+                     data-title="WooCommerce Payment Retry System"
+                     data-desc="An integrated transaction recovery framework designed to automatically handle interrupted checkout operations. Detects checkout drop-off parameters instantly and safely generates high-security, uniquely tokenized checkout URL sequences allowing immediate, single-click client processing restarts."
+                     data-features="Automatic failed engine intercept routines, Secure unique URL generation structures, Database transactional fallback loops, Multi-gateway route toggles"
+                     data-stack="WooCommerce Engine Core, PHP Core, REST Webhooks, Secure Tokens">
+                    <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80" alt="Payment Retry Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.4] grayscale" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/40 to-transparent flex flex-col justify-end p-6">
+                        <p class="text-[10px] font-mono text-neonCyan tracking-widest uppercase mb-1">Core Overhaul</p>
+                        <h3 class="text-lg font-heading font-bold text-white mb-2">WooCommerce Payment Retry System</h3>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white/5 border border-white/10 text-gray-300 text-[10px] px-2 py-0.5 rounded font-mono">WooCommerce</span>
+                            <span class="bg-white/5 border border-white/10 text-gray-300 text-[10px] px-2 py-0.5 rounded font-mono">REST Hooks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card h-[420px] rounded-xl overflow-hidden relative group cursor-pointer border border-borderGray bg-darkCard"
+                     data-project="api-integration"
+                     data-title="Third-Party REST API Sync Engine"
+                     data-desc="A highly optimized real-time background inventory synchronization framework. Safely links remote ERP supplier databases directly with local WordPress setups, processing deep product arrays asynchronously without straining server RAM limits or dropping connection threads."
+                     data-features="Token-based authentication protocols, Dynamic transient data optimization steps, Advanced error reporting alerts, Asynchronous crontab parsing layers"
+                     data-stack="REST API Architecture, Bearer Tokens, WP_Cron Engine, Data Mapping">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="API Synchronization matrix" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.4] grayscale" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/60 to-transparent flex flex-col justify-end p-6">
+                        <p class="text-[10px] font-mono text-neonOrange tracking-widest uppercase mb-1">Data Pipeline</p>
+                        <h3 class="text-lg font-heading font-bold text-white mb-2">Third-Party REST API Sync</h3>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            <span class="bg-white/5 border border-white/10 text-gray-300 text-[10px] px-2 py-0.5 rounded font-mono">REST API</span>
+                            <span class="bg-white/5 border border-white/10 text-gray-300 text-[10px] px-2 py-0.5 rounded font-mono">WP_Cron</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-28 border-t border-borderGray scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-heading font-bold tracking-tight text-white section-heading">
+                    Verified Strategic Feedback
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    See how businesses optimize their core transactional channels with reliable architecture.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 testimonials-grid">
+                <div class="bg-darkCard border border-borderGray p-8 rounded-xl relative flex flex-col justify-between">
+                    <p class="text-gray-400 font-light text-sm leading-relaxed italic">
+                        "Nayeem completely diagnosed our recurring multi-currency payment checkout issue in less than a day. Our checkout drop-offs collapsed immediately after his plugin updates were rolled into production."
+                    </p>
+                    <div class="flex items-center space-x-3 pt-6 border-t border-white/5 mt-6">
+                        <div class="w-9 h-9 rounded-full bg-neonOrange/10 flex items-center justify-center font-heading font-bold text-neonOrange text-xs">DS</div>
+                        <div>
+                            <p class="text-xs font-heading font-bold text-white">David S.</p>
+                            <p class="text-[10px] text-gray-500 font-mono uppercase">E-commerce Operator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darkCard border border-borderGray p-8 rounded-xl relative flex flex-col justify-between">
+                    <p class="text-gray-400 font-light text-sm leading-relaxed italic">
+                        "Our dynamic API sync plugin was completely unstable under high concurrency, dropping critical data packets. Nayeem refactored the data ingest into clean, asynchronous transient batches."
+                    </p>
+                    <div class="flex items-center space-x-3 pt-6 border-t border-white/5 mt-6">
+                        <div class="w-9 h-9 rounded-full bg-neonCyan/10 flex items-center justify-center font-heading font-bold text-neonCyan text-xs">MK</div>
+                        <div>
+                            <p class="text-xs font-heading font-bold text-white">Marcus K.</p>
+                            <p class="text-[10px] text-gray-500 font-mono uppercase">Operations Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESTORED: High-Converting Core Contact Matrix Gateway -->
+        <section id="contact" class="py-28 border-t border-borderGray scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div class="inline-block text-[10px] font-mono bg-neonOrange/10 text-neonOrange px-3 py-1 rounded-full uppercase tracking-widest">Instant Communication Hub</div>
+                <h2 class="text-3xl font-heading font-bold tracking-tight text-white">
+                    Initiate Production Line Contact
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Skip forms. Connect with my engineering channel immediately via any preferred endpoint below.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 contact-info-matrix">
+                <!-- WhatsApp Endpoint Card -->
+                <a href="https://wa.me/8801946092919" target="_blank" rel="noopener" class="bg-darkCard border border-borderGray hover:border-green-500/40 p-6 rounded-xl flex flex-col justify-between transition-all group duration-300">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.852.002-2.63-1.023-5.101-2.885-6.963C16.528 1.928 14.06 1.001 12.006 1c-5.441 0-9.866 4.422-9.87 9.854-.001 1.716.453 3.39 1.313 4.874L2.43 21.57l6.217-1.631z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-heading font-bold text-white">WhatsApp Line</h3>
+                            <p class="text-xs text-gray-400 font-light mt-1">Direct text and documentation tracking sync.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono text-neonCyan mt-6 group-hover:underline block">01946092919 →</span>
+                </a>
+
+                <!-- Phone Audio Link -->
+                <a href="tel:+8801761631541" class="bg-darkCard border border-borderGray hover:border-neonCyan/40 p-6 rounded-xl flex flex-col justify-between transition-all group duration-300">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-neonCyan/10 text-neonCyan flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72.74.74 0 00.9.54l2.21-.44a1 1 0 01.9.4l2.36 2.36a1 1 0 010 1.41l-1.48 1.48a1 1 0 00-.28.73v1.5a1 1 0 00.28.73l1.48 1.48a1 1 0 010 1.41l-2.36 2.36a1 1 0 01-1.41 0l-1.48-1.48a1 1 0 00-.73-.28h-1.5a1 1 0 00-.73.28l-1.48 1.48a1 1 0 01-1.41 0l-2.36-2.36a1 1 0 01-.4-1l.44-2.21a.74.74 0 00-.54-.9A1 1 0 013 13.28V5z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-heading font-bold text-white">Voice Trunk Line</h3>
+                            <p class="text-xs text-gray-400 font-light mt-1">Direct cellular network link for system emergencies.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono text-neonCyan mt-6 group-hover:underline block">01761631541 →</span>
+                </a>
+
+                <!-- Primary Mail Routing -->
+                <a href="mailto:dev.nayeemhasan@gmail.com" class="bg-darkCard border border-borderGray hover:border-neonOrange/40 p-6 rounded-xl flex flex-col justify-between transition-all group duration-300">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-neonOrange/10 text-neonOrange flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-heading font-bold text-white">Engineering Mail</h3>
+                            <p class="text-xs text-gray-400 font-light mt-1">Primary communication channel for project requests.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono text-neonCyan mt-6 group-hover:underline block truncate">dev.nayeemhasan@gmail.com →</span>
+                </a>
+
+                <!-- Facebook Engineering Profile Link -->
+                <a href="https://www.facebook.com/ncccpkaj" target="_blank" rel="noopener" class="bg-darkCard border border-borderGray hover:border-blue-500/40 p-6 rounded-xl flex flex-col justify-between transition-all group duration-300">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-heading font-bold text-white">Messenger Routing</h3>
+                            <p class="text-xs text-gray-400 font-light mt-1">Social layer verification and text dispatch.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono text-neonCyan mt-6 group-hover:underline block">fb.com/ncccpk →</span>
+                </a>
+            </div>
+
+            <!-- Fallback Alternate Backup Channel -->
+            <div class="mt-8 text-center bg-darkCard border border-borderGray rounded-xl p-4 max-w-xl mx-auto">
+                <p class="text-xs text-gray-500 font-mono">
+                    SECONDARY COMPONENT INTEL INGEST: <a href="mailto:ncccpkaj@gamil.com" class="text-gray-300 hover:text-neonCyan underline">ncccpkaj@gamil.com</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- PROFESSIONAL ENTERPRISE FOOTER MATRIX -->
+    <footer class="border-t border-borderGray bg-[#070709] relative z-10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12">
+            <div class="space-y-4">
+                <p class="text-sm font-heading font-bold text-white tracking-wider">NH.ENGINEERING</p>
+                <p class="text-xs text-gray-500 leading-relaxed font-light">
+                    Providing structural e-commerce code refactoring, Laravel application builds, and performance optimization globally from Comilla, Bangladesh.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">Technology Array</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-darkCard border border-borderGray px-2.5 py-1 text-gray-400 rounded">PHP 8.x Core</span>
+                    <span class="text-[10px] font-mono bg-darkCard border border-borderGray px-2.5 py-1 text-gray-400 rounded">Laravel Framework</span>
+                    <span class="text-[10px] font-mono bg-darkCard border border-borderGray px-2.5 py-1 text-gray-400 rounded">WooCommerce API</span>
+                    <span class="text-[10px] font-mono bg-darkCard border border-borderGray px-2.5 py-1 text-gray-400 rounded">OpenLiteSpeed</span>
+                    <span class="text-[10px] font-mono bg-darkCard border border-borderGray px-2.5 py-1 text-gray-400 rounded">MySQL Optimization</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">Navigation Paths</h4>
+                <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+                    <a href="#about" class="text-gray-500 hover:text-white transition-colors">About Ops</a>
+                    <a href="#services" class="text-gray-500 hover:text-white transition-colors">Core Systems</a>
+                    <a href="#live-ecosystem" class="text-gray-500 hover:text-white transition-colors">Client Nodes</a>
+                    <a href="#projects" class="text-gray-500 hover:text-white transition-colors">Bespoke Code</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">Availability Horizon</h4>
+                <p class="text-xs text-gray-500 leading-relaxed font-light mb-2">Currently accepting emergency infrastructure tickets and scaling agreements.</p>
+                <span class="inline-flex items-center gap-1.5 text-[10px] text-green-400 bg-green-500/10 px-2.5 py-1 rounded-full font-mono">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>SYSTEM CLEAR TO INTRA-WEEK BLOCK
+                </span>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-borderGray flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-[11px] text-gray-600 font-mono">&copy; 2026 Nayeem Hasan. Compiled via secure framework infrastructure components.</p>
+            <div class="flex space-x-4 text-xs font-mono text-gray-600">
+                <a href="https://github.com/ncccpkaj" target="_blank" rel="noopener" class="hover:text-neonCyan">GitHub Node</a>
+                <span>|</span>
+                <span class="text-gray-700">Comilla Matrix Core</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal View component framework -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-matte/90 backdrop-blur-md hidden opacity-0 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div id="modal-container" class="bg-darkCard border border-borderGray rounded-xl w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-2xl transform scale-95 transition-all duration-300 relative">
+            <div class="sticky top-0 bg-darkCard/95 backdrop-blur border-b border-borderGray p-6 flex items-center justify-between z-10">
+                <div>
+                    <p id="modal-category" class="text-[10px] font-mono text-neonOrange tracking-widest uppercase mb-0.5">Category</p>
+                    <h3 id="modal-title" class="text-lg font-heading font-bold text-white">Project Case Study</h3>
+                </div>
+                <button id="modal-close" class="text-gray-400 hover:text-white transition-colors rounded-full p-1 focus:outline-none" aria-label="Dismiss Modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="p-6 space-y-6">
+                <div class="space-y-2">
+                    <h4 class="text-xs font-mono text-gray-500 uppercase tracking-wider">Functional Intent Overview</h4>
+                    <p id="modal-desc" class="text-xs sm:text-sm text-gray-400 leading-relaxed font-light">Detailed operational text...</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="text-xs font-mono text-gray-500 uppercase tracking-wider">Core Feature Implementations</h4>
+                    <ul id="modal-features" class="text-xs sm:text-sm text-gray-400 list-disc list-inside space-y-1 font-light"></ul>
+                </div>
+                <div class="space-y-2 pt-2 border-t border-white/5">
+                    <h4 class="text-xs font-mono text-gray-500 uppercase tracking-wider">Target Technology Parameters</h4>
+                    <div id="modal-stack" class="flex flex-wrap gap-2 pt-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script assets -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
