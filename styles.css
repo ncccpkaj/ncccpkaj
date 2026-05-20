@@ -1,0 +1,82 @@
+@layer base {
+  :root {
+    --color-matte: #0A0A0C;
+    --color-orange: #FF5100;
+    --color-cyan: #00F0FF;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-matte);
+  }
+}
+
+/* Lenis Integration Stability Framework */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: overflow-y;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Glassmorphism Interfaces UI styling configurations */
+.glass-panel {
+  background: rgba(18, 18, 22, 0.5);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+
+.sr-only-focusable:not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Custom Navigation Link Active Underline Animation Hooks */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--color-cyan);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.nav-link:hover::after, .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Premium Gradient Button Interface */
+.gradient-btn {
+  background: linear-gradient(135deg, var(--color-orange) 0%, #E6005C 50%, var(--color-cyan) 100%);
+  background-size: 200% auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+.gradient-btn:hover {
+  background-position: right center;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.overflow-hidden-freeze {
+  overflow: hidden !important;
+}
